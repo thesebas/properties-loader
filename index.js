@@ -1,4 +1,5 @@
 var properties = require("properties");
+var iconv = require('iconv-lite');
 
 /**
  * A webpack loader that allows the loading of `.properties` file.
@@ -8,6 +9,8 @@ var properties = require("properties");
 module.exports = function (content) {
   this.cacheable();
 
+  content = iconv.decode(content, this.query.readEncoding || 'latin1')
+
   var callback = this.async();
   properties.parse(content, this.query, function (err, result) {
     if (err) {
@@ -16,3 +19,5 @@ module.exports = function (content) {
     return callback(null, "module.exports = " + JSON.stringify(result, null, 2));
   });
 };
+
+module.exports.raw = true

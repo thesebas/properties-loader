@@ -6,6 +6,7 @@
   "author": "Jordan Santell <jordan@jsantell.com>",
   "license": "MIT",
   "dependencies": {
-    "properties": "thesebas/node-properties#with-read-encoding"
+    "properties": "1.2.1",
+    "iconv-lite": "0.5.1"
   }
 }
