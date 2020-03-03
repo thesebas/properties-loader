@@ -6,6 +6,6 @@
   "author": "Jordan Santell <jordan@jsantell.com>",
   "license": "MIT",
   "dependencies": {
-    "properties": "^1.2.1"
+    "properties": "thesebas/node-properties#with-read-encoding"
   }
 }
